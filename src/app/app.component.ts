@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, throwError  } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +7,10 @@ import { Observable, throwError  } from 'rxjs';
 })
 export class AppComponent {
   title = 'SensoWave';
-  animals:any=[];
-  constructor(private httpClient:HttpClient){
-
+  constructor(){
   }
 
-  ngOnInit(){
-    this.httpClient.get("assets/evaluation_data.json")
-      .subscribe(data => {
-        console.log(data);
-        this.animals = data;
-      })
-  }
+  ngOnInit(){  }
 }
 
 

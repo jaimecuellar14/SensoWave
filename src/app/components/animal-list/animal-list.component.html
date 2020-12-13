@@ -1,0 +1,8 @@
+    <mat-grid-list cols="2" rowHeigh="4:1">
+        <mat-grid-tile *ngFor="let animal of animales">
+            <app-animal-card [name]="animal.name" [genus]="animal.genus" [legalId]="animal._id_legal"
+                [age]="animal.age"
+            >
+            </app-animal-card>
+        </mat-grid-tile>
+    </mat-grid-list>
