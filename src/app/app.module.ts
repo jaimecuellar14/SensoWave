@@ -16,7 +16,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { AnimalListComponent } from './components/animal-list/animal-list.component';
 import { AnimalCardComponent } from './components/animal-card/animal-card.component';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({ 
   declarations: [
@@ -39,6 +39,7 @@ import { MatCardModule } from '@angular/material/card';
     MatSnackBarModule,
     MatGridListModule,
     MatCardModule,
+    MatExpansionModule
   ],
   exports:[
     MatSidenavModule,
@@ -47,7 +48,8 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatSnackBarModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

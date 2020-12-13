@@ -9,8 +9,15 @@
     </mat-card-content>
     <mat-card-actions class="card-bottom">
         <p>Ver mas informacion</p>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="showMore()">
             <mat-icon>control_point</mat-icon>
         </button>
     </mat-card-actions>
 </mat-card>
+<mat-expansion-panel [(expanded)]="xpanded">
+    <mat-card>
+        <mat-card-subtitle>Fecha de nacimiento: {{birth}}</mat-card-subtitle>
+        <mat-card-subtitle>Creado: {{createdAt}}</mat-card-subtitle>
+        <mat-card-subtitle>Ultima actualizacion: {{updatedAt}}</mat-card-subtitle>
+    </mat-card>
+</mat-expansion-panel>

@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AnimalCardComponent implements OnInit {
 
-  
+  xpanded:boolean=false;
 
   constructor() { }
 
@@ -22,5 +22,7 @@ export class AnimalCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  public showMore = () => {
+    this.xpanded = this.xpanded?false:true;
+  }
 }
