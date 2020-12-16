@@ -1,8 +1,9 @@
-FROM node:12.16.1-alpine As builde
-WORKDIR /usr/src/app
-COPY package.json package-lock.json ./
-RUN npm install
+FROM node:alpine AS build
+WORKDIR /app
 COPY . .
-RUN npm run build --prod
-FROM nginx:1.15.8-alpine
-COPY --from=builder /usr/src/app/dist/SampleApp/ /usr/share/nginx/html
+RUN npm ci && npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/dist/SensoWave /usr/share/nginx/html
+EXPOSE 80
+
