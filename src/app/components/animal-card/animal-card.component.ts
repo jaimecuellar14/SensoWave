@@ -12,13 +12,14 @@ export class AnimalCardComponent implements OnInit {
   constructor() { }
 
   @Input() name:string;
-  @Input() birth:string;
+  @Input() date_birth:string;
   @Input() sex:string;
   @Input() age:string;
   @Input() createdAt: string;
   @Input() updatedAt: string;
   @Input() legalId:string;
-  @Input() genus:string
+  @Input() genus:string;
+  @Input() data:any;
 
   ngOnInit(): void {
   }

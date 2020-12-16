@@ -1,10 +1,24 @@
-<div class="home-header">
-    <p>
-        Solucion a problema propuesto por SensoWave, utilizando Angular con AngularMaterial
-        Y mas tecnologias.
-        Se puede encontrar el codigo fuente del proyecto en el siguiente repositorio.
-    </p>
-    <button mat-icon-button (click)="redirectRepository()">
-        <mat-icon svgIcon="github"></mat-icon>
-    </button>
-</div>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <div class="home-header">
+            <div class="home-info">
+                <p>
+                    Solución a problema propuesto por SensoWave, utilizando Angular con AngularMaterial
+                    y mas tecnologías.
+                    Se puede encontrar el código fuente del proyecto en el siguiente repositorio.
+                    Y asimismo el link del despliegue en un bucket S3 de AWS.
+                </p>
+                <button mat-icon-button (click)="redirectRepository()" class="repo-button">
+                    <mat-icon svgIcon="github"></mat-icon>
+                </button>
+                <button mat-icon-button (click)="redirectDeployment()" class="s3-button">
+                    <mat-icon svgIcon="s3"></mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <img src="https://sensowave.es/wp-content/uploads/2020/09/sesnowave_new.png">
+    </mat-grid-tile>
+  </mat-grid-list>

@@ -1,3 +1,16 @@
+.flex-grid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.animal-grid{
+    width: 50%;
+    height: 50px;
+}
+.animal-grid mat-grid-tile{
+    height: 100px;
+    margin-top: 5%;
+}
 .animal-card{
-    margin:0px;
+    margin: 5%;
 }

@@ -1,8 +1,11 @@
-    <mat-grid-list cols="2" rowHeigh="200px">
+<div class="flex-grid">
+    <mat-grid-list cols="2" rowHeigh="2:1" class="animal-grid">
         <mat-grid-tile *ngFor="let animal of animales">
             <app-animal-card [name]="animal.name" [genus]="animal.genus" [legalId]="animal._id_legal"
-                [age]="animal.age" [birth]="animal.date_birth" [createdAt]="animal.createdAt" [updatedAt]="animal.updatedAt"
-            class="animal-card">
+                [age]="animal.age" [date_birth]="animal.date_birth" [createdAt]="animal.createdAt" [updatedAt]="animal.updatedAt"
+            class="animal-card" [data]="animal">
             </app-animal-card>
         </mat-grid-tile>
     </mat-grid-list>
+</div>
+

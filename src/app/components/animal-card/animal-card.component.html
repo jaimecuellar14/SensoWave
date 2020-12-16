@@ -1,23 +1,28 @@
-<mat-card>
+<mat-card class="animal-card">
     <mat-card-header>
-        <mat-card-title>{{legalId}}</mat-card-title>
-        <mat-card-title>Tipo animal: {{genus}}</mat-card-title>
+        <div mat-card-avatar class="avatar"></div>
+        <mat-card-title>{{data.legalId}}</mat-card-title>
+        <mat-card-title>Tipo animal: {{data.genus}}</mat-card-title>
     </mat-card-header>
-    <mat-card-content>
-        <mat-card-subtitle>Nombre: {{name}}</mat-card-subtitle>
-        <mat-card-subtitle>{{ age["value"] }} - {{age["text"]}}</mat-card-subtitle>
+    <mat-card-content class="card-content">
+        <mat-card-subtitle>Nombre: {{data.name}}</mat-card-subtitle>
+        <mat-card-subtitle>{{ data.age["value"] }} - {{data.age["text"]}}</mat-card-subtitle>
     </mat-card-content>
     <mat-card-actions class="card-bottom">
-        <p>Ver mas informacion</p>
-        <button mat-icon-button (click)="showMore()">
+        <p *ngIf="xpanded==false">Ver mas información</p>
+        <p *ngIf="xpanded==true">Ver menos información</p>
+        <button mat-icon-button (click)="showMore()" *ngIf="xpanded==false">
             <mat-icon>control_point</mat-icon>
+        </button>
+        <button mat-icon-button (click)="showMore()" *ngIf="xpanded==true">
+            <mat-icon>remove_circle_outline</mat-icon>
         </button>
     </mat-card-actions>
 </mat-card>
-<mat-expansion-panel [(expanded)]="xpanded">
-    <mat-card>
-        <mat-card-subtitle>Fecha de nacimiento: {{birth}}</mat-card-subtitle>
-        <mat-card-subtitle>Creado: {{createdAt}}</mat-card-subtitle>
-        <mat-card-subtitle>Ultima actualizacion: {{updatedAt}}</mat-card-subtitle>
+<mat-expansion-panel [(expanded)]="xpanded" class="animal-card">
+    <mat-card class="animal-card card-content" >
+        <mat-card-subtitle>Fecha de nacimiento: {{data.date_birth}}</mat-card-subtitle>
+        <mat-card-subtitle>Creado: {{data.createdAt}}</mat-card-subtitle>
+        <mat-card-subtitle>Ultima actualización: {{data.updatedAt}}</mat-card-subtitle>
     </mat-card>
 </mat-expansion-panel>

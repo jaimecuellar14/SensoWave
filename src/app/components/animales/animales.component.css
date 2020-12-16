@@ -1,3 +1,15 @@
 .genero-animales{
-    background-color:darkgrey;
+    background-color:#2b7a7b;
+}
+
+.male-animals:hover{
+    background-color:dodgerblue;
+}
+
+.female-animals:hover{
+    background-color: lightcoral;
+}
+.gender-icon{
+    height: 300px;
+    width: 300px;
 }

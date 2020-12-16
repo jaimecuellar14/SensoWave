@@ -1,8 +1,8 @@
 <mat-grid-list cols="2" gutterSize="5px" class="genero-animales">
-    <mat-grid-tile (click)="goToList('male')">
-        Masculino
+    <mat-grid-tile (click)="goToList('male')" class="male-animals">
+        <mat-icon svgIcon="male" class="gender-icon"></mat-icon>
     </mat-grid-tile>
-    <mat-grid-tile (click)="goToList('female')">
-        Femenino
+    <mat-grid-tile (click)="goToList('female')" class="female-animals">
+        <mat-icon svgIcon="female" class="gender-icon"></mat-icon>
     </mat-grid-tile>
 </mat-grid-list>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from "@angular/material/icon";
 
 @Component({
   selector: 'app-animales',
@@ -10,7 +12,17 @@ import { Router } from '@angular/router';
 })
 export class AnimalesComponent implements OnInit {
   animales:any=[];
-  constructor(private httpClient: HttpClient, private snackBar: MatSnackBar, private router:Router) { }
+  constructor(private httpClient: HttpClient, private snackBar: MatSnackBar, private router:Router,
+    iconRegistry:MatIconRegistry, sanitizer:DomSanitizer) {
+      iconRegistry.addSvgIcon(
+        'female',
+        sanitizer.bypassSecurityTrustResourceUrl("assets/female-gender.svg")
+      );
+      iconRegistry.addSvgIcon(
+        'male',
+        sanitizer.bypassSecurityTrustResourceUrl("assets/male-gender.svg")
+      );
+     }
 
   ngOnInit(): void {
     this.showMessage();
