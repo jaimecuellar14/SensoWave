@@ -17,6 +17,10 @@ import { AnimalListComponent } from './components/animal-list/animal-list.compon
 import { AnimalCardComponent } from './components/animal-card/animal-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatSelectModule } from '@angular/material/select';
+
+
 
 @NgModule({ 
   declarations: [
@@ -39,7 +43,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatSnackBarModule,
     MatGridListModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatChipsModule,
+    MatSelectModule
   ],
   exports:[
     MatSidenavModule,
@@ -49,7 +55,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatSnackBarModule,
     MatGridListModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatChipsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

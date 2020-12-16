@@ -1,9 +1,8 @@
-FROM node:alpine AS build
-WORKDIR /app
+FROM node:10.16.1-alpine AS builder
+WORKDIR /SensoWave
 COPY . .
-RUN npm ci && npm run build
+RUN npm i
+RUN npm run build --prod
 
-FROM nginx:alpine
-COPY --from=build /app/dist/SensoWave /usr/share/nginx/html
-EXPOSE 80
-
+FROM nginx:1.15.8-alpine
+COPY --from=builder /SensoWave/dist/SensoWave/ /usr/share/nginx/html

@@ -13,3 +13,51 @@
     height: 300px;
     width: 300px;
 }
+ul{
+    display: inline-block;
+    list-style-type: none;
+}
+img{
+    height: 50px;
+    width: 50px;
+    border-radius: 30%;
+}
+
+.animal-selection-page{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.animal-badges{
+    display:inline-block;
+}
+
+.animal-badges mat-chip{
+    margin: 10px;
+}
+
+.selector{
+    background-color:#def2f1;
+    margin-top:3%;
+}
+.flex-grid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.animal-grid{
+    width: 50%;
+    height: 50px;
+}
+.animal-grid mat-grid-tile{
+    height: 100px;
+    margin-top: 5%;
+}
+.animal-card{
+    margin: 5%;
+}
+.noAnimal{
+    margin-top: 5%;
+    font-weight: bolder;
+    color: #FEFFFF;
+}

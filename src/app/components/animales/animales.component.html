@@ -1,8 +1,36 @@
-<mat-grid-list cols="2" gutterSize="5px" class="genero-animales">
+<!--<mat-grid-list cols="2" gutterSize="5px" class="genero-animales">
     <mat-grid-tile (click)="goToList('male')" class="male-animals">
         <mat-icon svgIcon="male" class="gender-icon"></mat-icon>
     </mat-grid-tile>
     <mat-grid-tile (click)="goToList('female')" class="female-animals">
         <mat-icon svgIcon="female" class="gender-icon"></mat-icon>
     </mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list>-->
+<div class="animal-selection-page">
+    <p style="font-size: 20px; color:#FEFFFF;">Selecciona el tipo de animal que quieres visualizar</p>
+    <mat-chip-list *ngFor="let animal of tiposAnimales" class="animal-badges">
+        <mat-chip (click)="showAnimals(this.animal['type'])">{{animal["type"]}}</mat-chip>
+    </mat-chip-list>
+    <div *ngIf="existAnimal">
+        <mat-form-field appearance="fill" class="selector">
+            <mat-label>Selecciona una opción</mat-label>
+            <mat-select [(value)]="seleccion" (valueChange)="selectGender(seleccion)">
+              <mat-option value="male">Masculino</mat-option>
+              <mat-option value="female">Femenino</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="flex-grid" *ngIf="genderSelected">
+            <mat-grid-list cols="2" rowHeigh="2:1" class="animal-grid">
+                <mat-grid-tile *ngFor="let animal of animalesMostrar">
+                    <app-animal-card [name]="animal.name" [genus]="animal.genus" [legalId]="animal._id_legal"
+                        [age]="animal.age" [date_birth]="animal.date_birth" [createdAt]="animal.createdAt" [updatedAt]="animal.updatedAt"
+                    class="animal-card" [data]="animal">
+                    </app-animal-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </div>
+    <div *ngIf="!existAnimal" class="noAnimal">
+        <p>No se encontraron animales de este tipo.</p>
+    </div>
+</div>
