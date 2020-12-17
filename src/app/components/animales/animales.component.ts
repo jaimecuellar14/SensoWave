@@ -34,17 +34,25 @@ export class AnimalesComponent implements OnInit {
       );
      }
 
+
+  /**
+   * Cargamos los datos utilizando httpClient de angular.
+   */
   ngOnInit(): void {
     this.showMessage();
-    setTimeout(() => {
       this.httpClient.get("assets/evaluation_data.json")
       .subscribe(data => {
         this.animales = data;
         this.closeMessage();
       })
-    }, 1000);
   }
 
+  /**
+   * 
+   * @param gender 
+   * Funcion que coge el genero a filtrar.
+   * Y devuelve un array con todos los animales que corresponden a dicho genero.
+   */
   filterAnimals = (gender:string) => {
     let listaAnimales=[];
     this.animales.map((item)=>{
@@ -55,14 +63,24 @@ export class AnimalesComponent implements OnInit {
     return listaAnimales;
   }
 
+  /**
+   * Mostramos un mensaje mientras cogemos los datos.
+   */
   showMessage = () =>{
     this.snackBar.open("Cargando animales...","Cerrar");
   }
-
+  /**
+   * Cerramos el mensaje.
+   */
   closeMessage = () =>{
     this.snackBar.dismiss();
   }
 
+  /**
+   * 
+   * @param type (tipo animal. ej:vaca, caballo, etc)
+   * Funcion que verifica que el tipo de animal seleccionado exista.
+   */
   public showAnimals = (type) => {
     for(let i=0; i<this.animales.length;i++){
       if(this.animales[i].genus==type){
@@ -79,6 +97,13 @@ export class AnimalesComponent implements OnInit {
     this.router.navigate(['/animal-list'], {state:{data:listaAnimales}});
   }
 
+  /**
+   * 
+   * @param seleccion (Del select, masculino o femenino)
+   * Funcion que se encarga de coger la seleccion de genero
+   * Para luego mostrar en la vista la lista de animales
+   * Segun su genero
+   */
   public selectGender = (seleccion) => {
     console.log(seleccion);
     this.genderSelected =true;
